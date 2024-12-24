@@ -131,7 +131,7 @@ DROP TABLE IF EXISTS sales_by_market_date_ranked;
 CREATE TEMP TABLE sales_by_market_date_ranked AS
 SELECT *,
 RANK() OVER (ORDER BY sales) AS sales_ranked
-FROM sales_by_market_date;
+FROM total_sales;
 
 --3)
 SELECT market_date, sales, sales_ranked, day_type
